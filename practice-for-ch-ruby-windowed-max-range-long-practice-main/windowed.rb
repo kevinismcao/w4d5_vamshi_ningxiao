@@ -1,4 +1,4 @@
-def naive_windowed_max_range(arr, window_size)
+def naive_windowed_max_range(arr, window_size) #quadratic time complexity
     newarr = []
     (0..arr.length-window_size).each do |i|
         newarr << arr[i...i+window_size]
@@ -12,7 +12,79 @@ def naive_windowed_max_range(arr, window_size)
     current_max_range
 end
 
+class MyQueue 
+    def initialize 
+        @store = []
+    end
 
+    def size 
+        @store.length
+    end 
+
+    def enqueue(value) 
+        @store.push(value)
+    end 
+
+    def dequeue 
+        @store.shift
+    end 
+    
+    def peek 
+        @store.last 
+    end 
+
+    def empty?
+        @store.empty? 
+    end
+
+end
+
+class MyStack 
+    def initialize 
+        @store = []
+    end
+
+    def peek 
+        @store.last 
+    end 
+
+    def size 
+        @store.length 
+    end 
+
+    def empty?
+        @store.empty?
+    end 
+
+    def pop 
+        @store.pop 
+    end 
+
+    def push (value)
+        @store.push(value)
+    end
+
+end
+
+class StackQueue 
+
+    def size 
+
+    end 
+
+    def empty?
+
+    end 
+
+    def enqueue
+
+    end
+
+    def dequeue
+
+    end 
+
+end
 
 
 
